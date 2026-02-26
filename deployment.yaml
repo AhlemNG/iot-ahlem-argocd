@@ -1,22 +1,22 @@
 apiVersion: apps/v1
-kinf: Deployment
+kind: Deployment
 metadata:
-  name: my-deployment
+  name: iot-app
   namespace: dev
   labels:
-    app: wil-playground
+    app: iot-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: wil-playground
+      app: iot-app
   template:
     metadata:
       labels:
-        app: wil-playground
+        app: iot-app
     spec:
       containers:
-        - name: wil-playground
-          image: wil42/playground:v1
-          ports:
-            - containerPort: 8888
+      - name: iot-app
+        image: svvoii/iot-app:v2
+        ports:
+        - containerPort: 8888
